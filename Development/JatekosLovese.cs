@@ -13,6 +13,21 @@ namespace Development
         double y;
         public int id { get; set; }
         double distance;
+        double pontszam;
+        int lovesekSzama;
+        double atlagPontszam;
+
+        public JatekosLovese(string name, double atlagPontszam)
+        {
+            this.name = name;
+            this.atlagPontszam = atlagPontszam;
+        }
+
+        public JatekosLovese(string name, int lovesekSzama)
+        {
+            this.name = name;
+            this.lovesekSzama = lovesekSzama;
+        }
 
         public JatekosLovese(string name, double x, double y, int id)
         {
@@ -30,9 +45,22 @@ namespace Development
         {
             get
             {
-                return Math.Sqrt(x*x + y*y);
+                return Math.Sqrt(Math.Pow((x - CelTabla.x), 2)+ Math.Pow((y - CelTabla.y), 2) );
             }
             set => distance = value;
         }
+
+        public double Pontszam
+        {
+            get
+            {
+                return 10 - Distance;
+            }
+            
+            set => pontszam = value;
+        }
+
+        public int LovesekSzama { get => lovesekSzama; set => lovesekSzama = value; }
+        public double AtlagPontszam { get => atlagPontszam; set => atlagPontszam = value; }
     }
 }

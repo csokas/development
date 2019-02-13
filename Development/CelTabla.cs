@@ -8,7 +8,7 @@ namespace Development
 {
     class CelTabla
     {
-        public double x { get; set; }
-        public double y { get; set; }
+        public static double x { get; set; }
+        public static double y { get; set; }
     }
 }
